@@ -13,7 +13,6 @@ const refs = {
 
 let selectedDate = null;
 refs.buttonStart.disabled = true;
-// refs.buttonStart = 'disabled';
 
 const startTime = flatpickr(refs.input, {
   enableTime: true,
@@ -55,13 +54,9 @@ function onStartTime() {
   setInterval(() => {
     const currentTime = Date.now();
     const deltaTime = selectedDate.getTime() - currentTime;
-    const { days, hours, minutes, seconds } = convertMs(deltaTime);
-    // const { time } = convertMs(deltaTime);
+    const timer = convertMs(deltaTime);
 
-    console.log(`${days}::${hours}::${minutes}::${seconds}`);
-
-    // updateClockFase(days, hours, minutes, seconds);
-    // updateClockFase();
+    updateClockFase(timer);
   }, 1000);
 }
 function addLeadingZero(value) {
