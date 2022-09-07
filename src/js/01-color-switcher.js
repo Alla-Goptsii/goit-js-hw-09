@@ -12,7 +12,6 @@ function onClickBtnStart() {
   intervalId = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  // isActive = true;
 }
 
 refs.btnStop.addEventListener('click', onClickBtnStop);
